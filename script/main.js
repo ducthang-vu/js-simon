@@ -30,7 +30,7 @@ $(document).ready(function() {
 
     function startTimer() {
         var startTime = performance.now()
-        var idTimer = setInterval(() => {
+        idTimer = setInterval(() => {
             var timeLeft = maxTime - (performance.now() - startTime) / 1000 | 0
             time_display.innerHTML = timeLeft
             if (!timeLeft) {
@@ -63,6 +63,8 @@ $(document).ready(function() {
     
 
     function startGame() {
+        clearInterval(idTimer) // reset timer
+        time_display.innerHTML = 30  // reset timer
         game_numbers  = randomNumberSet(n_numbers, 10, 100)
         alert('The five numbers are: ' + iterable_to_string(game_numbers) +'.\nPress ok to start the clock, after 30 seconds you will be asked to enter the five numbers!')
         startTimer()
@@ -82,6 +84,7 @@ $(document).ready(function() {
     var user_numbers = []
     var result_array
     var final_score
+    var idTimer
 
     playBtn.addEventListener('click', startGame)
     
