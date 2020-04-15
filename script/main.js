@@ -35,6 +35,8 @@ $(document).ready(function() {
 
 
     function startTimer() {
+        cards.toggleClass('flipped')
+        $('#start-timer-btn').hide()
         var startTime = performance.now()
         idTimer = setInterval(() => {
             var timeLeft = maxTime - (performance.now() - startTime) / 1000 | 0
@@ -62,6 +64,7 @@ $(document).ready(function() {
 
 
     function endgame() {
+        
         promptNumbers(user_numbers, n_numbers)
         result_array =  user_numbers.map(x => game_numbers.has(x))
         result_display.innerHTML = 'The numbers chosen by the machine were:<br>' +  iterable_to_string(game_numbers) + '<br>You chose the following numbers:<br>' + iterable_to_string(user_numbers) + '<br>Thus the result is:<br>' + iterable_to_string(result_array) + '<br>The final score is<br>' + result_array.reduce((x, y) => x + y) + '.'
@@ -74,7 +77,9 @@ $(document).ready(function() {
         time_display.innerHTML = 30  // reset timer
         game_numbers  = randomNumberSet(n_numbers, 10, 100)
         print_cards()
-        setTimeout(() => cards.toggleClass('flipped'), 
+        setTimeout(() => {
+            cards.toggleClass('flipped')
+            $('#start-timer-btn').show()}, 
         1000)
         startTimeBtn.addEventListener('click', startTimer)
     }
@@ -97,6 +102,7 @@ $(document).ready(function() {
     const time_display = document.getElementById('time-display')
     const result_display = document.getElementById('result-display')
     const startTimeBtn = document.getElementById('start-timer-btn')
+    const userInput = document.getElementById('user-input')
 
     const n_numbers = 5
     const maxTime = 30  //seconds

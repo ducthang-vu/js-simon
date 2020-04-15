@@ -75,10 +75,19 @@
             </section>
 
             <section class="play-zone">
-                <button id="start-timer-btn" class="block central green white-color">Start timer</button>
+                <div class="button-wrapper">
+                    <button id="start-timer-btn" class="display-none central green white-color">Start timer</button>
+                </div>
+                
 
                 <div class="box flex central">
                     <span id="time-display">30</span>
+                </div>
+                
+                <div class="input-wrapper display-none">
+                    <label for="user-input">Write here 5 numbers:</label>
+                    <input id="user-input" type="text">
+                    <button id="input-btn">Confirm numbers</button>
                 </div>
                 
                 <div>
