@@ -16,9 +16,7 @@ $(document).ready(function() {
     }
 
 
-
-
-
+    /* MAIN FUNCTIONS */
     function iterable_to_string(iterable) {
         var content = ''
 
@@ -69,21 +67,34 @@ $(document).ready(function() {
         alert('The five numbers are: ' + iterable_to_string(game_numbers) +'.\nPress ok to start the clock, after 30 seconds you will be asked to enter the five numbers!')
         startTimer()
     }
-  
+
+
+    /* OTHER FUNCTIONS*/
+    function showInfo() {
+        rules_box.toggle()
+        info_button.toggleClass('darkred-color')
+        info_button.children().toggleClass('fa-question-circle fa-window-close')
+    } 
+
+
 
     /* GLOBAL VARIABLE */
+    const info_button = $('#info-button')
+    const rules_box = $('#rules')
     const playBtn = document.getElementById('play-btn')
     const time_display = document.getElementById('time-display')
     const result_display = document.getElementById('result-display')
 
     const n_numbers = 5
     const maxTime = 30  //seconds
-   
 
     var game_numbers 
     var user_numbers = []
     var result_array
     var idTimer
+
+    /* EVENTS */
+    info_button.click(showInfo)
 
     playBtn.addEventListener('click', startGame)
     

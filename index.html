@@ -7,13 +7,50 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
+<body class="flex black white-color">
+    <header>
+        <div class="container flex central">
+            <h1 class="text-center">js-simon</h1>
+            <button id="play-btn" class="green white-color">Play</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="container central">
+            <span id="time-display">30</span>
+            <span id="result-display"></span>
+        </div>
+    </main>
+
+
     
-    <button id="play-btn">Play</button>
-    <span id="time-display">30</span>
-    <span id="result-display"></span>
+    <footer>
+        <div class="container relative central">
+            <div class="main-footer flex">
+                <button id="info-button" class="info-button black white-color">
+                    <i class="far fa-question-circle"></i>
+                </button>
+    
+                <div class="footer-right text-right">
+                    <p>Made by Thang<br>15/04/2020</p>
+                </div>  
+            </div> 
+        
+            <div id="rules" class="rules absolute display-none text-left ">
+                <p>
+                    A set of 5 different numbers are chosen randomly by the machine.
+                </p>
+    
+                <p>
+                    The player, then, starts a 30 seconds countdown and the five numbers are hide from the player.
+                </p>
 
-
+                <p>
+                    After the countdown the player is asked to enter the five numbers. The final is the quantity of numbers the player has managed to recall. 
+                </p>
+            </div>
+        </div>
+    </footer>
 
     <!-- SCRIPT -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
