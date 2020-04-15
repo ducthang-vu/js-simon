@@ -77,7 +77,7 @@ $(document).ready(function() {
     function show_result(user_array) {
         $('#input-wrapper').hide()
         result_array =  user_array.map(x => game_numbers.has(x))
-        result_display.innerHTML = 'The numbers chosen by the machine were:<br>' +  iterable_to_string(game_numbers) + '<br>You chose the following numbers:<br>' + iterable_to_string(user_array) + '<br>Thus the result is:<br>' + iterable_to_string(result_array) + '<br>The final score is<br>' + result_array.reduce((x, y) => x + y) + '.'
+        result_display.innerHTML = 'The numbers chosen by the machine were:<br>' +  iterable_to_string(game_numbers) + '<br><br>You chose the following numbers:<br>' + iterable_to_string(user_array) + '<br><br>Thus the result is:<br>' + iterable_to_string(result_array) + '<br><br>The final score is' + result_array.reduce((x, y) => x + y) + '.'
     }
     
 
@@ -118,7 +118,7 @@ $(document).ready(function() {
     const input_btn = document.getElementById('input-btn')
 
     const n_numbers = 5
-    const maxTime = 10  //seconds
+    const maxTime = 30  //seconds
 
     var game_numbers 
     var user_array = []
