@@ -35,7 +35,7 @@ $(document).ready(function() {
 
 
     function startTimer() {
-        cards.toggleClass('flipped')
+        cards.removeClass('flipped')
         $('#start-timer-btn').hide()
         var startTime = performance.now()
         idTimer = setInterval(() => {
@@ -62,25 +62,37 @@ $(document).ready(function() {
         }
     }
 
-
     function endgame() {
-        
-        promptNumbers(user_numbers, n_numbers)
-        result_array =  user_numbers.map(x => game_numbers.has(x))
-        result_display.innerHTML = 'The numbers chosen by the machine were:<br>' +  iterable_to_string(game_numbers) + '<br>You chose the following numbers:<br>' + iterable_to_string(user_numbers) + '<br>Thus the result is:<br>' + iterable_to_string(result_array) + '<br>The final score is<br>' + result_array.reduce((x, y) => x + y) + '.'
+        input_btn.addEventListener('click', getNumberbyUser)
+        $('#input-wrapper').show()
+    }
+
+    function getNumberbyUser() {
+        var user_array = userInput.value.split(' ')
+        if (user_array.length != 5 || user_array.map(x => isNaN(x)).reduce((x,y) => x + y) != 0) {
+            result_display.innerHTML = 'You must enter exacly 5 numbers, try again.'
+        } else show_result(user_array)
+    }
+
+    function show_result(user_array) {
+        $('#input-wrapper').hide()
+        result_array =  user_array.map(x => game_numbers.has(x))
+        result_display.innerHTML = 'The numbers chosen by the machine were:<br>' +  iterable_to_string(game_numbers) + '<br>You chose the following numbers:<br>' + iterable_to_string(user_array) + '<br>Thus the result is:<br>' + iterable_to_string(result_array) + '<br>The final score is<br>' + result_array.reduce((x, y) => x + y) + '.'
     }
     
 
     function startGame() {
         clearInterval(idTimer) // reset timer
         cards.removeClass('flipped')
+        $('#input-wrapper').hide()
         time_display.innerHTML = 30  // reset timer
+
         game_numbers  = randomNumberSet(n_numbers, 10, 100)
         print_cards()
         setTimeout(() => {
-            cards.toggleClass('flipped')
+            cards.addClass('flipped')
             $('#start-timer-btn').show()}, 
-        1000)
+        500)
         startTimeBtn.addEventListener('click', startTimer)
     }
 
@@ -88,7 +100,7 @@ $(document).ready(function() {
     /* OTHER FUNCTIONS*/
     function showInfo() {
         rules_box.toggle()
-        info_button.toggleClass('darkred-color')
+        info_button.toggleClass('white-color darkred-color')
         info_button.children().toggleClass('fa-question-circle fa-window-close')
     } 
 
@@ -103,12 +115,13 @@ $(document).ready(function() {
     const result_display = document.getElementById('result-display')
     const startTimeBtn = document.getElementById('start-timer-btn')
     const userInput = document.getElementById('user-input')
+    const input_btn = document.getElementById('input-btn')
 
     const n_numbers = 5
-    const maxTime = 30  //seconds
+    const maxTime = 10  //seconds
 
     var game_numbers 
-    var user_numbers = []
+    var user_array = []
     var result_array
     var idTimer
 
