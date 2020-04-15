@@ -86,6 +86,7 @@ $(document).ready(function() {
         clearInterval(idTimer) // reset timer
         cards.removeClass('flipped')
         $('#input-wrapper').hide()
+        result_display.innerHTML = ''
         time_display.innerHTML = 30  // reset timer
 
         game_numbers  = randomNumberSet(n_numbers, 10, 100)
