@@ -188,6 +188,10 @@ main {
         padding: 10px;
     }
 
+    .result-display-box {
+        margin-top: 10px;
+    }
+
 /* FOOTER  */
 .main-footer {
     justify-content: space-between;
