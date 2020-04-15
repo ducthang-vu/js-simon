@@ -46,7 +46,7 @@ $(document).ready(function() {
         for (let i = 0; i <= n; i++) {
             var usernumber = parseInt(prompt('Enter a number:'))
 
-            while (isNAn(unsernumber)) {
+            while (isNaN(unsernumber)) {
                 usernumber = parseInt(prompt('You must enter a number, try again:'))
             }
 
