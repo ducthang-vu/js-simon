@@ -69,6 +69,7 @@ $(document).ready(function() {
 
     function getNumberbyUser() {
         var user_array = userInput.value.trim().split(' ')
+        user_array = user_array.filter(x => x)
         if (user_array.length != 5 || user_array.map(x => isNaN(x)).reduce((x,y) => x + y) != 0) {
             result_display.innerHTML = 'You must enter exacly 5 numbers, try again.'
         } else show_result(user_array)
