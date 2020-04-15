@@ -78,7 +78,7 @@ $(document).ready(function() {
         $('#input-wrapper').hide()
         cards.addClass('flipped')
         result_array =  user_array.map(x => game_numbers.has(x))
-        result_display.innerHTML = 'You chose the following numbers:<br>' + iterable_to_string(user_array) + '<br><br>Thus the result is:<br>' + iterable_to_string(result_array) + '<br><br>The final score is' + result_array.reduce((x, y) => x + y) + '.'
+        result_display.innerHTML = 'You chose the following numbers:<br>' + iterable_to_string(user_array) + '<br><br>The final score is ' + result_array.reduce((x, y) => x + y) + '.'
     }
     
 
