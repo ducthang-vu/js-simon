@@ -68,8 +68,7 @@ $(document).ready(function() {
     }
 
     function getNumberbyUser() {
-        var user_array = userInput.value.trim().split(' ')
-        user_array = user_array.filter(x => x)
+        var user_array = userInput.value.trim().split(' ').filter(x => x)
         if (user_array.length != 5 || user_array.map(x => isNaN(x)).reduce((x,y) => x + y) != 0) {
             result_display.innerHTML = 'You must enter exacly 5 numbers, try again.'
         } else show_result(user_array)
@@ -122,7 +121,7 @@ $(document).ready(function() {
     const input_btn = document.getElementById('input-btn')
 
     const n_numbers = 5
-    const maxTime = 30  //seconds
+    const maxTime = 2 //seconds
 
     var game_numbers 
     var user_array = []
