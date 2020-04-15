@@ -76,7 +76,7 @@ $(document).ready(function() {
         print_cards()
         setTimeout(() => cards.toggleClass('flipped'), 
         1000)
-        startTimeBtn.addEventListener(startTimer)
+        startTimeBtn.addEventListener('click', startTimer)
     }
 
 
@@ -96,7 +96,7 @@ $(document).ready(function() {
     const playBtn = document.getElementById('play-btn')
     const time_display = document.getElementById('time-display')
     const result_display = document.getElementById('result-display')
-    const startTimeBtn = document.getElementById(start-timer-btn)
+    const startTimeBtn = document.getElementById('start-timer-btn')
 
     const n_numbers = 5
     const maxTime = 30  //seconds
