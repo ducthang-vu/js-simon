@@ -76,7 +76,7 @@ $(document).ready(function() {
     const result_display = document.getElementById('result-display')
 
     const n_numbers = 5
-    const maxTime = 10  //seconds
+    const maxTime = 30  //seconds
    
 
     var game_numbers 
