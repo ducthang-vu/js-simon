@@ -43,10 +43,10 @@ $(document).ready(function() {
 
 
     function promptNumbers(n) {
-        for (let i = 0; i <= n; i++) {
+        for (let i = 1; i <= n; i++) {
             var usernumber = parseInt(prompt('Enter a number:'))
 
-            while (isNaN(unsernumber)) {
+            while (isNaN(usernumber)) {
                 usernumber = parseInt(prompt('You must enter a number, try again:'))
             }
 
@@ -57,7 +57,7 @@ $(document).ready(function() {
 
     function endgame() {
         promptNumbers(n_numbers)
-        result_array =  user_numbers.filter(x => game_numbers.has(x))
+        result_array =  user_numbers.map(x => game_numbers.has(x))
         final_score = 
         result_display.innerHTML = 'The numbers chosen by the machine were:<br>' +  iterable_to_string(game_numbers) + '<br>You chose the following numbers:<br>' + iterable_to_string(user_numbers) + '<br>Thus the result is:<br>' + iterable_to_string(result_array) + '<br>The final score is<br>' + result_array.reduce((x, y) => x + y) + '.'
     }
@@ -76,11 +76,11 @@ $(document).ready(function() {
     const result_display = document.getElementById('result-display')
 
     const n_numbers = 5
-    const maxTime = 30  //seconds
+    const maxTime = 10  //seconds
    
 
     var game_numbers 
-    var user_numbers
+    var user_numbers = []
     var result_array
     var final_score
 
