@@ -121,7 +121,7 @@ $(document).ready(function() {
     const input_btn = document.getElementById('input-btn')
 
     const n_numbers = 5
-    const maxTime = 10  //seconds
+    const maxTime = 30  //seconds
 
     var game_numbers 
     var user_array = []
