@@ -83,7 +83,6 @@ $(document).ready(function() {
     var game_numbers 
     var user_numbers = []
     var result_array
-    var final_score
     var idTimer
 
     playBtn.addEventListener('click', startGame)
