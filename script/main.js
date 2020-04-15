@@ -58,7 +58,6 @@ $(document).ready(function() {
     function endgame() {
         promptNumbers(n_numbers)
         result_array =  user_numbers.map(x => game_numbers.has(x))
-        final_score = 
         result_display.innerHTML = 'The numbers chosen by the machine were:<br>' +  iterable_to_string(game_numbers) + '<br>You chose the following numbers:<br>' + iterable_to_string(user_numbers) + '<br>Thus the result is:<br>' + iterable_to_string(result_array) + '<br>The final score is<br>' + result_array.reduce((x, y) => x + y) + '.'
     }
     
