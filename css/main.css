@@ -1,0 +1,68 @@
+/*  GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    background: inherit;
+    color: inherit;
+}
+
+li {
+    list-style: none;
+}
+
+button {
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+    border: 0;
+    cursor: pointer;
+}
+
+
+/* UTILITIES */
+.container {
+    width: 1140px;
+    max-width: 90%;
+    padding: 30px 10px;
+}
+
+.block {
+    display: block;
+}
+
+.in-block {
+    display: inline-block;
+}
+
+.flex {
+    display: flex;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.central {
+    margin: auto;
+}
+
+.white-color {
+    color: white;
+}
+
