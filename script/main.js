@@ -42,7 +42,7 @@ $(document).ready(function() {
     }
 
 
-    function promptNumbers(n) {
+    function promptNumbers(array, n) {
         for (let i = 1; i <= n; i++) {
             var usernumber = parseInt(prompt('Enter a number:'))
 
@@ -50,13 +50,13 @@ $(document).ready(function() {
                 usernumber = parseInt(prompt('You must enter a number, try again:'))
             }
 
-            user_numbers.push(usernumber)
+            array.push(usernumber)
         }
     }
 
 
     function endgame() {
-        promptNumbers(n_numbers)
+        promptNumbers(user_numbers, n_numbers)
         result_array =  user_numbers.map(x => game_numbers.has(x))
         result_display.innerHTML = 'The numbers chosen by the machine were:<br>' +  iterable_to_string(game_numbers) + '<br>You chose the following numbers:<br>' + iterable_to_string(user_numbers) + '<br>Thus the result is:<br>' + iterable_to_string(result_array) + '<br>The final score is<br>' + result_array.reduce((x, y) => x + y) + '.'
     }
