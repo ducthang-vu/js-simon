@@ -11,14 +11,80 @@
     <header>
         <div class="container flex central">
             <h1 class="text-center">js-simon</h1>
-            <button id="play-btn" class="green white-color">Play</button>
+            <button id="play-btn" class="block green white-color">Play</button>
         </div>
     </header>
 
     <main>
         <div class="container central">
-            <span id="time-display">30</span>
-            <span id="result-display"></span>
+            <section class="card-wrapper flex central">
+                <div class="scene">
+                    <div class="card relative">
+                        <div class="card-face card-down absolute">
+                            <span>?</span>
+                        </div>  
+                        <div id="0" class="card-face card-up absolute">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scene">
+                    <div class="card relative">
+                        <div class="card-face card-down absolute">
+                            <span>?</span>
+                        </div>  
+                        <div id="1" class="card-face card-up absolute">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scene">
+                    <div class="card relative">
+                        <div class="card-face card-down absolute">
+                            <span>?</span>
+                        </div>  
+                        <div id="2" class="card-face card-up absolute">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scene">
+                    <div class="card relative">
+                        <div class="card-face card-down absolute">
+                            <span>?</span>
+                        </div>  
+                        <div id="3" class="card-face card-up absolute">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scene">
+                    <div class="card relative">
+                        <div class="card-face card-down absolute">
+                            <span>?</span>
+                        </div>  
+                        <div id="4" class="card-face card-up absolute">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="play-zone">
+                <button id="start-timer-btn" class="block central green white-color">Start timer</button>
+
+                <div class="box flex central">
+                    <span id="time-display">30</span>
+                </div>
+                
+                <div>
+                    <span id="result-display"></span>
+                </div>
+            </section>
         </div>
     </main>
 

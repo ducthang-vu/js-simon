@@ -26,6 +26,14 @@ $(document).ready(function() {
     }
 
 
+    function print_cards() {
+        counter = 0
+        for (let i = 0; i < 5; i++) {
+            document.getElementById(i).innerHTML = Array.from(game_numbers)[i]
+        }
+    }
+
+
     function startTimer() {
         var startTime = performance.now()
         idTimer = setInterval(() => {
@@ -62,10 +70,13 @@ $(document).ready(function() {
 
     function startGame() {
         clearInterval(idTimer) // reset timer
+        cards.removeClass('flipped')
         time_display.innerHTML = 30  // reset timer
         game_numbers  = randomNumberSet(n_numbers, 10, 100)
-        alert('The five numbers are: ' + iterable_to_string(game_numbers) +'.\nPress ok to start the clock, after 30 seconds you will be asked to enter the five numbers!')
-        startTimer()
+        print_cards()
+        setTimeout(() => cards.toggleClass('flipped'), 
+        1000)
+        startTimeBtn.addEventListener(startTimer)
     }
 
 
@@ -81,9 +92,11 @@ $(document).ready(function() {
     /* GLOBAL VARIABLE */
     const info_button = $('#info-button')
     const rules_box = $('#rules')
+    const cards = $('.card')
     const playBtn = document.getElementById('play-btn')
     const time_display = document.getElementById('time-display')
     const result_display = document.getElementById('result-display')
+    const startTimeBtn = document.getElementById(start-timer-btn)
 
     const n_numbers = 5
     const maxTime = 30  //seconds
